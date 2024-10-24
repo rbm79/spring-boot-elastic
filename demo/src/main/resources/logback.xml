@@ -2,7 +2,8 @@
     <!-- Appender para logs JSON no console -->
     <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <includeMdcKeyName>department</includeMdcKeyName>
+            <includeMdc>true</includeMdc>
+            <includeMdcKeyName>custom.department</includeMdcKeyName>
             <includeMdcKeyName>traceId</includeMdcKeyName>
             <includeMdcKeyName>spanId</includeMdcKeyName>
             <customFields>{"app_name":"your-app-name","environment":"${SPRING_PROFILES_ACTIVE:-development}"}</customFields>
